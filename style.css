@@ -1,0 +1,76 @@
+
+body {
+     font-family: Arial, sans-serif;
+     line-height: 1.6;
+     margin: 40px;
+     background-color:rgb(253, 253, 253);
+     color: #333;
+    }
+/* h1, h2, h3 {
+     color: #2c3e50;
+} */
+.about-container {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: auto;
+  background: rgb(169, 241, 169);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+
+  }
+.container{
+           min-height: auto;
+            max-width: 1000px;
+            margin: auto;
+            background: rgb(169, 241, 169);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+        }
+
+.jumb{
+            min-height: 20vh;
+        }
+
+
+
+
+
+
+.fixed-size {
+  width: 285px;
+  height: 200px;
+  object-fit: cover;
+  /* Optional: crops images to fill area */
+}
+
+.carousel-size {
+  width: 250px;
+  height: 500px;
+  /* object-fit: cover; Optional: crops images to fill area */
+}
+
+.carousel-item img {
+  border-radius: 6px;
+}
+
+.custom-jumbotron {
+            background-color: rgb(116, 175, 76);
+            /* Change this to your desired color */
+            color: black;
+            /* Optional: text color */
+        }
+
+
+.ques{
+  min-height: 500px;
+}
+
+
+.custom-jumbo {
+            background-color: rgb(188, 240, 153);
+            /* Change this to your desired color */
+            color: rgb(75, 71, 71);
+            /* Optional: text color */
+        }
