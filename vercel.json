@@ -2,7 +2,11 @@
   "version": 2,
   "builds": [
     {
-      "src": "index.php",
+      "src": "*.php",
+      "use": "vercel-php@0.7.1"
+    },
+    {
+      "src": "partials/*.php",
       "use": "vercel-php@0.7.1"
     },
     {
@@ -24,8 +28,40 @@
   ],
   "routes": [
     {
-      "src": "/(.*)",
+      "src": "/_about.php",
+      "dest": "/_about.php"
+    },
+    {
+      "src": "/_contact.php",
+      "dest": "/_contact.php"
+    },
+    {
+      "src": "/threadlist.php",
+      "dest": "/threadlist.php"
+    },
+    {
+      "src": "/thread.php",
+      "dest": "/thread.php"
+    },
+    {
+      "src": "/search.php",
+      "dest": "/search.php"
+    },
+    {
+      "src": "/partials/(.*)",
+      "dest": "/partials/$1"
+    },
+    {
+      "src": "/(style.css|app.js|logo.png|user.jpg)",
       "dest": "/$1"
+    },
+    {
+      "src": "/",
+      "dest": "/index.php"
+    },
+    {
+      "src": "/index.php",
+      "dest": "/index.php"
     }
   ]
 }
