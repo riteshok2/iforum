@@ -1,5 +1,4 @@
 <?php
-// Start session at the very beginning before ANY output or includes
 if (session_status() === PHP_SESSION_NONE) {
     @session_start();
 }
