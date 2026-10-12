@@ -1,5 +1,5 @@
 
-<?php include 'partials/_dbconnect.php'; ?>
+<?php include __DIR__ . '/_dbconnect.php'; ?>
 <?php
 session_start();
 
@@ -71,8 +71,8 @@ echo '
 </nav>';
 
 // Include modals
-include 'partials/_loginModal.php';
-include 'partials/_signupModal.php';
+include __DIR__ . '/_loginModal.php';
+include __DIR__ . '/_signupModal.php';
 
 // Alerts for signup or login
 if (isset($_GET['signupsuccess']) && $_GET['signupsuccess'] == "true") {
