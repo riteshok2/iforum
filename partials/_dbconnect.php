@@ -1,18 +1,15 @@
 <?php
-// Script to connect to the database (supports local and cloud environments like TiDB/Vercel)
-$servername = getenv('DB_HOST') ?: "gateway01.ap-southeast-1.prod.aws.tidbcloud.com";
-$username   = getenv('DB_USER') ?: "U3wDiEB9GevZ3oK.root";
-$password   = getenv('DB_PASS') ?: ""; // fallback
-$database   = getenv('DB_NAME') ?: "test";
-$port       = getenv('DB_PORT') ?: 4000;
+$servername = trim(getenv('DB_HOST') ?: "gateway01.ap-southeast-1.prod.aws.tidbcloud.com");
+$username   = trim(getenv('DB_USER') ?: "U3wDiEB9GevZ3oK.root");
+$password   = trim(getenv('DB_PASS') ?: "");
+$database   = trim(getenv('DB_NAME') ?: "test");
+$port       = (int)(getenv('DB_PORT') ?: 4000);
 
-// Initialize mysqli with SSL connection for TiDB Cloud
 $conn = mysqli_init();
 mysqli_ssl_set($conn, NULL, NULL, NULL, NULL, NULL);
 
-if (!@mysqli_real_connect($conn, $servername, $username, $password, $database, (int)$port, NULL, MYSQLI_CLIENT_SSL)) {
-    // Fallback standard connection
-    $conn = mysqli_connect($servername, $username, $password, $database, (int)$port);
+if (!@mysqli_real_connect($conn, $servername, $username, $password, $database, $port, NULL, MYSQLI_CLIENT_SSL)) {
+    $conn = mysqli_connect($servername, $username, $password, $database, $port);
 }
 
 if (!$conn) {
